@@ -155,7 +155,7 @@ def convert_examples_to_features(
 
             inputs = tokenizer.encode_plus(
                 text_a, text_b, add_special_tokens=True, max_length=max_length, return_token_type_ids=True,
-                return_overflowing_tokens=True,
+                return_overflowing_tokens=False, truncation=True
             )
 
             if "num_truncated_tokens" in inputs and inputs["num_truncated_tokens"] > 0:
